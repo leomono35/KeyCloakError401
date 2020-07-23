@@ -1,0 +1,3 @@
+keyCloakConfiguration\config\KeycloakSecurityConfig.class
+keyCloakConfiguration\controller\TestController.class
+com\keycloeakSecondTester\keycloak\KeycloakApplication.class
