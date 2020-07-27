@@ -25,6 +25,10 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http.authorizeRequests()
+                .antMatchers("/test/anonymous").permitAll()
+                .antMatchers("/test/user").hasAnyRole("app-user")
+                .antMatchers("/test/admin").hasAnyRole("app-admin")
+                .antMatchers("/test/all-user").hasAnyRole("app-user","app-admin")
                 .anyRequest()
                 .permitAll();
         http.csrf().disable();
